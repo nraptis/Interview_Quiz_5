@@ -71,14 +71,13 @@ import Foundation
 //          *   *
 //        v v v v v
 //
-//    ->  x|e|e|e|x  <-
-//    ->  e|e|e|e|x  <-
-//    ->  e|e|x|e|x  <-
-//    ->  e|e|e|e|x  <-
-//    ->  e|x|e|x|e  <-
+//     >  x|e|e|e|x  <
+//     >  e|e|e|e|x  <
+//     >  e|e|x|e|x  <
+//     >  e|e|e|e|x  <
+//     >  e|x|e|x|e  <
 //
 //        ^ ^ ^ ^
-//        | | | |
 //        *
 //
 // Expected Result:
@@ -105,9 +104,6 @@ import Foundation
 // {-1, 1}
 // {4, 3}
 //
-
-
-
 
 struct GridPoint {
     let x: Int
@@ -264,6 +260,7 @@ print("===========================")
 
 // Expected Result:
 // {-1, 1}
+// {2, 4}
 
 // ===========================
 
@@ -274,7 +271,6 @@ let test_string_2 = """
                     e|.|x|.|x
                     e|e|e|e|.
                     """
-
 let test_grid_2 = grid(from: test_string_2)
 let result2 = bestShots(grid: test_grid_2)
 
@@ -296,9 +292,8 @@ let test_string_3 = """
                     e|e|e|e|x
                     x|e|x|e|x
                     e|e|e|e|x
-                    e|x|e|e|e
+                    x|e|e|e|e
                     """
-
 let test_grid_3 = grid(from: test_string_3)
 let result3 = bestShots(grid: test_grid_3)
 
@@ -308,10 +303,10 @@ for shot in result3 {
 }
 print("===========================")
 
-// Expected Result:
+// Possible Result:
 // {1, -1}
+// {2, -1}
 // {3, -1}
-// {0, 5}
 
 // ===========================
 
@@ -385,10 +380,7 @@ print("===========================")
 // ===========================
 
 let test_string_7 = """
-                    .|.|x|.
-                    e|e|e|x
-                    .|.|e|.
-                    .|.|e|.
+                    e|e
                     """
 let test_grid_7 = grid(from: test_string_7)
 let result7 = bestShots(grid: test_grid_7)
@@ -400,8 +392,7 @@ for shot in result7 {
 print("===========================")
 
 // Expected Result:
-// {-1, 1}
-// {2, 4}
+// {2, 0}
 
 // ===========================
 

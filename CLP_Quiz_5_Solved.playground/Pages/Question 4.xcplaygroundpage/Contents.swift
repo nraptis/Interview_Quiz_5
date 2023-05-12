@@ -7,7 +7,7 @@ import Foundation
 //
 // You must pack the coffins into as few graves as possible.
 //
-// So, the sum of the coffin heights packed into each grave should not exceed 18.
+// The sum of the coffin heights packed into each grave should not exceed 18.
 //
 // Input: List of coffin heights. (in meters)
 //

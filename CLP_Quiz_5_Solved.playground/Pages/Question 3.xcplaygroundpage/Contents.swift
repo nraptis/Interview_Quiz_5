@@ -34,10 +34,10 @@ import Foundation
 //    x|x|x
 //
 // Start Point:
-// [0, 0]
+// {0, 0}
 //
 // End Point:
-// [2, 0]
+// {2, 0}
 //
 // Expected Result:
 // {0, 0}
@@ -58,10 +58,10 @@ import Foundation
 //    .|.|x|.|.
 //
 // Start Point:
-// [0, 1]
+// {0, 1}
 //
 // End Point:
-// [4, 1]
+// {4, 1}
 //
 // Expected Result:
 // (No Path)

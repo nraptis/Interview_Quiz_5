@@ -13,6 +13,7 @@ import Foundation
 // 2.) A starting point (startPoint)
 //
 // Find the shortest path from startPoint that visits all "." tiles.
+// You may need to visit the same tile twice.
 //
 // You cannot step onto "x" tiles, you can only step onto "." tiles.
 //
@@ -31,7 +32,7 @@ import Foundation
 //      .|.|.|.
 //
 // Start Point:
-// [1, 0]
+// {1, 0}
 //
 // Expected Result:
 // {1, 0}
@@ -51,10 +52,7 @@ import Foundation
 //      .|.|x|.|.
 //
 // Start Point:
-// [0, 0]
-//
-// End Point:
-// [4, 1]
+// {0, 0}
 //
 // Possible Result:
 // {0, 0}
@@ -118,7 +116,6 @@ extension PathQueueNode: Hashable {
         hasher.combine(gridY)
     }
 }
-
 
 struct PathSetNode {
     var mask: UInt64

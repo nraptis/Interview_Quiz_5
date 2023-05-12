@@ -23,12 +23,12 @@ import Foundation
 //
 // Consider the below 2x2 grid.
 //
-//        v v
+//      v v
 //
-//    >   e|x|  <
-//    >   x|e|  <
+//    > e|x| <
+//    > x|e| <
 //
-//        ^ ^
+//      ^ ^
 //
 // These are your possible "shoot from" locations in (x, y) format:
 // (-1, 0) shooting right
@@ -46,13 +46,13 @@ import Foundation
 //
 // Example 1:
 //
-//        v v v v
+//      v v v v
 //
-//    >   x|x|e|.  <
-//  * >   e|e|e|x  <
-//    >   e|.|x|.  <
+//    > x|x|e|. <
+//  * > e|e|e|x <
+//    > e|.|x|. <
 //
-//        ^ ^ ^ ^
+//      ^ ^ ^ ^
 //
 // Expected Result:
 // Snipe Location: (-1, 1)
@@ -61,15 +61,15 @@ import Foundation
 //
 // Example 2:
 //
-//              *
-//        v v v v
+//            *
+//      v v v v
 //
-//    >   x|x|.|e  <
-//    >   .|e|x|e  <
-//    >   e|x|e|e  <
-//    >   e|.|e|x
+//    > x|x|.|e <
+//    > .|e|x|e <
+//    > e|x|e|e <
+//    > e|.|e|x <
 //
-//        ^ ^ ^ ^
+//      ^ ^ ^ ^
 //
 // Expected Result:
 // Snipe Location: (3, -1)
@@ -79,14 +79,14 @@ import Foundation
 // Example 3:
 //
 //
-//        v v v v
+//      v v v v
 //
-//    >   x|x|x|x  <
-//    >   x|e|e|x  <
-//    >   x|e|e|x  <
-//    >   x|x|x|x
+//    > x|x|x|x <
+//    > x|e|e|x <
+//    > x|e|e|x <
+//    > x|x|x|x <
 //
-//        ^ ^ ^ ^
+//      ^ ^ ^ ^
 //
 // Expected Result:
 // nil
