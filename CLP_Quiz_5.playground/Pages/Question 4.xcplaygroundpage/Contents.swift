@@ -37,47 +37,8 @@ import Foundation
 // [5, 4, 2, 7]
 //
 
-struct Grave {
-    var coffins: [Int] = []
-}
-
 func packCoffinsInGraves(coffinHeights: [Int]) -> [[Int]] {
-    var result: [[Int]] = []
-    if coffinHeights.count <= 0 { return result }
-    var found = false
-    for numberOfCoffins in 1...coffinHeights.count {
-        
-        if found { break }
-        
-        var test = [Grave](repeating: Grave(), count: numberOfCoffins)
-        var placement = [Int](repeating: 0, count: coffinHeights.count)
-        
-        func helper(coffinIndex: Int) {
-            if found { return }
-            
-            if coffinIndex == coffinHeights.count {
-                found = true
-                result = test.map {
-                    $0.coffins
-                }
-                return
-            }
-            
-            for placementIndex in 0..<numberOfCoffins {
-                placement[coffinIndex] = placementIndex
-                
-                if test[placementIndex].coffins.reduce(0, +) + coffinHeights[coffinIndex] > 18 {
-                    continue
-                }
-                
-                test[placementIndex].coffins.append(coffinHeights[coffinIndex])
-                helper(coffinIndex: coffinIndex + 1)
-                test[placementIndex].coffins.removeLast()
-            }
-        }
-        helper(coffinIndex: 0)
-    }
-    return result
+    []
 }
 
 // ===========================

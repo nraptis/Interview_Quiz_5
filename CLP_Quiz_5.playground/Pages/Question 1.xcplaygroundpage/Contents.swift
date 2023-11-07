@@ -1,5 +1,8 @@
 import Foundation
 
+// NOTE: There are 5 pages in this playground.
+// There are a total of 5 questions, each on a separate page.
+
 //
 // You are an army sniper shooting enemy militants.
 //
@@ -102,98 +105,8 @@ extension GridPoint: CustomStringConvertible {
     var description: String { "{\(x), \(y)}" }
 }
 
-struct BorderPoint {
-    let x: Int
-    let y: Int
-    let dirX: Int
-    let dirY: Int
-}
-
-extension BorderPoint: CustomStringConvertible {
-    var description: String { "{{\(x), \(y)}|{\(dirX), \(dirY)}}" }
-}
-
 func bestShot(grid: [[Character]]) -> GridPoint? {
-    
-    let width = grid.count
-    guard width > 0 else { return nil }
-    
-    let height = grid[0].count
-    guard height > 0 else { return nil }
-    
-    let borderPoints = borderPoints(width: width, height: height)
-    
-    var result: GridPoint?
-    var resultCount = 0
-    
-    for borderPoint in borderPoints {
-        
-        var x = borderPoint.x
-        var y = borderPoint.y
-        
-        x += borderPoint.dirX
-        y += borderPoint.dirY
-        
-        var hitCount = 0
-        
-        while x >= 0 && x < width && y >= 0 && y < height &&
-                (grid[x][y] == "e" || grid[x][y] == ".") {
-            if grid[x][y] == "e" {
-                hitCount += 1
-            }
-            x += borderPoint.dirX
-            y += borderPoint.dirY
-        }
-        
-        if hitCount > resultCount {
-            resultCount = hitCount
-            result = GridPoint(x: borderPoint.x,
-                               y: borderPoint.y)
-        }
-    }
-    return result
-}
-
-func borderPoints(width: Int, height: Int) -> [BorderPoint] {
-    
-    if width <= 0 { return [] }
-    if height <= 0 { return [] }
-    
-    var result = [BorderPoint]()
-    
-    // top row
-    for x in 0..<width {
-        result.append(BorderPoint(x: x,
-                                  y: -1,
-                                  dirX: 0,
-                                  dirY: 1))
-    }
-    
-    // right row
-    for y in 0..<height {
-        result.append(BorderPoint(x: width,
-                                  y: y,
-                                  dirX: -1,
-                                  dirY: 0))
-    }
-    
-    // bottom row
-    for x in 0..<width {
-        
-        result.append(BorderPoint(x: x,
-                                  y: height,
-                                  dirX: 0,
-                                  dirY: -1))
-    }
-    
-    // left row
-    for y in 0..<height {
-        result.append(BorderPoint(x: -1,
-                                  y: y,
-                                  dirX: 1,
-                                  dirY: 0))
-    }
-    return result
+    nil
 }
 
 // ===========================
